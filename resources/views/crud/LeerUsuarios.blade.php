@@ -30,18 +30,21 @@
             @foreach($usuarios as $usuario)
 
                 <tr>
-                    <td class="px-6 py-3 bg-gray-50 dark:bg-gray-800">{{$usuario -> id}}</td>
-                    <td class="px-6 py-3 bg-gray-50 dark:bg-gray-800">{{$usuario -> nombre_user}}</td>
+                    <td class="px-9 py-3 bg-gray-50 dark:bg-gray-800">{{$usuario -> id}}</td>
+                    <td class="px-8 py-3 bg-gray-50 dark:bg-gray-800">{{$usuario -> nombre_user}}</td>
                     <td class="px-6 py-3 bg-gray-50 dark:bg-gray-800">{{$usuario -> cedula_user}}</td>
                     <td class="px-6 py-3 bg-gray-50 dark:bg-gray-800">{{$usuario -> num_telefono}}</td>
                     <td class="px-6 py-3 bg-gray-50 dark:bg-gray-800">{{$usuario -> direccion_user}}</td>
-                    <td>  <a href="{{route('editar.index', $usuario->id)}}">EDITAR</a>
+                    <td>  <a href="{{route('editar.index', $usuario->id)}}"
+                             class="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900"
+                        >
+                            EDITAR</a>
 
                         <form method="post" action="{{route('eliminar.index', $usuario->id)}}">
                             @csrf
 
                             {{method_field('DELETE')}}
-                            <input type="submit" value="Delete" class="shadow-inner bg-current text-inherit cursor-pointer">
+                            <input type="submit" value="Delete" class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
                         </form>
                     </td>
                 </tr>

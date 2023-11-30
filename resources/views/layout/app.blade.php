@@ -22,9 +22,9 @@
             <h1 class="text-3xl font-black">
                 Crud
             </h1>
-            <a href="{{ route('registro.index') }}" class="inline-block rounded bg-primary-100 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200" >Crear Cuenta</a>
+            <a href="{{ route('registro.index') }}" class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900" >Crear Cuenta</a>
 
-            <a href="{{route('usuarios.index')}}">Registros de Usuarios</a>
+            <a href="{{route('usuarios.index')}} " class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Registros de Usuarios</a>
 
         </header>
 

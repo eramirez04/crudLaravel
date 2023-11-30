@@ -55,7 +55,6 @@ class RegistroController extends Controller
         return redirect()->route('usuarios.index');
     }
 
-
     public function destroy( $usuario) {
         //
 
