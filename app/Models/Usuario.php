@@ -12,7 +12,10 @@ class Usuario extends Model
     protected $table = "usuarios";
 
     protected $fillable = [
-        'nombre_user', 'cedula_user', 'num_telefono', 'direccion_user'
+        'nombre_user',
+        'cedula_user',
+        'num_telefono',
+        'direccion_user'
     ];
 
 }

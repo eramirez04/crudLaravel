@@ -22,10 +22,15 @@ Route::get('/', function () {
 
 Route::get('/registro',[RegistroController::class,'index'])->name('registro.index');
 
-
+// ruta que me lleva al controlador para poder almacenar en la base de datos
 Route::post('/registro',[RegistroController::class,'store']);
 
+// ruta que mustra la vista con la informacion de los usuarios, que se trae desde la BD
 Route::get('/muro',[UsuarioController::class,'index']) ->name('usuarios.index');
 
-Route::post('/eliminar/{id}',[RegistroController::class,'destroy']) ->name('eliminar.index');
+Route::delete('/muro/{id}',[RegistroController::class, 'destroy']) ->name('eliminar.index');
+
+Route::get('/muro/{id}/editar',[RegistroController::class, 'edit']) -> name('editar.index');
+
+Route::put('/muro/{id}',[RegistroController::class,'update'])->name('actualizar');
 

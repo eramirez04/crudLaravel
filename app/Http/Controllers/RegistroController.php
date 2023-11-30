@@ -32,14 +32,38 @@ class RegistroController extends Controller
         ]);
 
         return redirect() ->route('usuarios.index');
-
     }
 
-    public function destroy(Usuario $usuario)
-    {
+    public function edit ($id){
+        $usuario=Usuario::find($id);
+        return view('crud.Editar', compact('usuario'));
+    }
+
+
+    public function update(Request $request, Usuario $usuario) {
+
+        $this->validate($request,[
+            'nombr' => 'required',
+            'cedula' => 'required | numeric',
+            'telefono' => 'required | numeric',
+            'direccion' => 'required'
+        ]);
+
+       $post = Usuario::findOrFail($usuario ->id);
+       $post ->$this->update($request->all());
+
+        return redirect()->route('usuarios.index');
+    }
+
+
+    public function destroy( $usuario) {
         //
 
-        Usuario::destroy($usuario);
+        $post = Usuario::find($usuario);
+        $post->delete();
+        return redirect()->route('usuarios.index');
+
+       // return redirect()->route('usuarios.index');
     }
 
 }

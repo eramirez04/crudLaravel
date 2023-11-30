@@ -35,14 +35,14 @@
                     <td class="px-6 py-3 bg-gray-50 dark:bg-gray-800">{{$usuario -> cedula_user}}</td>
                     <td class="px-6 py-3 bg-gray-50 dark:bg-gray-800">{{$usuario -> num_telefono}}</td>
                     <td class="px-6 py-3 bg-gray-50 dark:bg-gray-800">{{$usuario -> direccion_user}}</td>
-                    <td>Borrar |
+                    <td>  <a href="{{route('editar.index', $usuario->id)}}">EDITAR</a>
 
-                        <form method="post" action="{{route('/eliminar/'. $usuario->id)}}">
+                        <form method="post" action="{{route('eliminar.index', $usuario->id)}}">
+                            @csrf
 
-                            <input type="submit" value="Borrar">
-
+                            {{method_field('DELETE')}}
+                            <input type="submit" value="Delete" class="shadow-inner bg-current text-inherit cursor-pointer">
                         </form>
-
                     </td>
                 </tr>
             @endforeach
