@@ -36,21 +36,22 @@ class RegistroController extends Controller
 
     public function edit ($id){
         $usuario=Usuario::find($id);
-        return view('crud.Editar', compact('usuario'));
+        return view( 'crud.Editar',compact('usuario'));
     }
 
 
-    public function update(Request $request, Usuario $usuario) {
+    public function update(Request $request,$id) {
 
-        $this->validate($request,[
-            'nombr' => 'required',
+       //return $request;
+       $this->validate($request,[
+            'nombre' => 'required',
             'cedula' => 'required | numeric',
             'telefono' => 'required | numeric',
             'direccion' => 'required'
         ]);
 
-       $post = Usuario::findOrFail($usuario ->id);
-       $post ->$this->update($request->all());
+       $usuario = Usuario::find($id);
+       $usuario -> update($request->all());
 
         return redirect()->route('usuarios.index');
     }

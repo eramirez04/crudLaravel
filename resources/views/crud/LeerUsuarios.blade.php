@@ -52,7 +52,7 @@
             </tbody>
         </table>
 
-
+        {{$usuarios->links()}}
 
     </div>
 
