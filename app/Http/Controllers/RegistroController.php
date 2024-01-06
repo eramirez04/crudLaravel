@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Usuario;
+use App\Http\Requests\StoreRegistro;
 
 class RegistroController extends Controller
 {
@@ -13,16 +14,9 @@ class RegistroController extends Controller
         return view('crud.Registro');
     }
 
-    public function store(Request $request) {
+    public function store(StoreRegistro $request) {
         //Hola en la rama develop
 
-
-        $this->validate($request,[
-            'nombre' => 'required',
-            'cedula' => 'required | numeric',
-            'telefono' => 'required | numeric',
-            'direccion' => 'required'
-        ]);
 
         Usuario::create([
             'nombre_user' => $request-> nombre,
@@ -40,18 +34,12 @@ class RegistroController extends Controller
     }
 
 
-    public function update(Request $request,$id) {
+    public function update(StoreRegistro $request, $id) {
 
-       //return $request;
-       $this->validate($request,[
-            'nombre' => 'required',
-            'cedula' => 'required | numeric',
-            'telefono' => 'required | numeric',
-            'direccion' => 'required'
-        ]);
+        $datos = request()->except('_token','_method');
 
        $usuario = Usuario::find($id);
-       $usuario -> update($request->all());
+       $usuario -> update($datos);
 
         return redirect()->route('usuarios.index');
     }
