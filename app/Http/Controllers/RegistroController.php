@@ -14,7 +14,7 @@ class RegistroController extends Controller
     }
 
     public function store(Request $request) {
-        //return $request;
+        //Hola en la rama develop
 
 
         $this->validate($request,[
