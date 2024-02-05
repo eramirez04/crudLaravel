@@ -12,9 +12,9 @@ class UsuarioController extends Controller
      */
     public function index() {
 
-
-        $datos['usuarios'] = Usuario::paginate();
-        return view('crud.LeerUsuarios', $datos);
+        //$datos['usuarios'] = Usuario::paginate();
+       // return view('crud.LeerUsuarios', $datos);
+        return auth()->user();
     }
 
     /**

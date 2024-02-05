@@ -15,9 +15,7 @@
 
 </head>
 
-
     <boyd>
-
         <header class="flex justify-between p-5 border-b bg-white shadow">
             <h1 class="text-3xl font-black">
                 Crud
@@ -25,6 +23,8 @@
             <a href="{{ route('registro.index') }}" class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900" >Crear Cuenta</a>
 
             <a href="{{route('usuarios.index')}} " class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Registros de Usuarios</a>
+
+            <a href="{{route('login.index')}}">Login</a>
 
         </header>
 

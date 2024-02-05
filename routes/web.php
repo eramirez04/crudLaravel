@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
     use App\Http\Controllers\RegistroController;
+    use App\Http\Controllers\LoginController;
 
     /*
     |--------------------------------------------------------------------------
@@ -20,10 +21,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('/registro',[RegistroController::class,'index'])->name('registro.index');
+Route::get('/register',[RegistroController::class,'index'])->name('registro.index');
 
 // ruta que me lleva al controlador para poder almacenar en la base de datos
 Route::post('/registro',[RegistroController::class,'store']);
+Route::get('/login',[LoginController::class,'index'])->name('login.index');
+Route::post('/login/',[LoginController::class,'store'])->name('logear');
 
 // ruta que mustra la vista con la informacion de los usuarios, que se trae desde la BD
 Route::get('/muro',[UsuarioController::class,'index']) ->name('usuarios.index');
